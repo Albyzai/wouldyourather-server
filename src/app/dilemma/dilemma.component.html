@@ -1,0 +1,27 @@
+<div
+  style="width: 950px; height:250px; display: block; margin:auto; position:relative;"
+>
+  <div class="dilemma-component" *ngIf="dilemma">
+    <dilemma-button
+      color="red"
+      [question]="dilemma.red"
+      [votes]="dilemma.red_votes_count"
+      [total-votes]="dilemma.total_votes"
+      (answered)="onAnswered($event)"
+      [isAnswered]="answered"
+    ></dilemma-button>
+    <div>
+      eller
+    </div>
+
+    <dilemma-button
+      color="blue"
+      [question]="dilemma.blue"
+      [votes]="dilemma.blue_votes_count"
+      [total-votes]="totalVotes"
+      (answered)="onAnswered($event)"
+      [isAnswered]="answered"
+    >
+    </dilemma-button>
+  </div>
+</div>

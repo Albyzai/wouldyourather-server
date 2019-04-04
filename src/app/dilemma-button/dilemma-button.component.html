@@ -1,0 +1,34 @@
+<div
+  class="dilemma-button {{ color }}"
+  [ngClass]="{ chosen: chosen }"
+  (click)="submitAnswer()"
+>
+  <!-- <div *ngIf="!isAnswered; then isNotAnswered; else IsAnswered"></div>
+  <ng-template #isNotAnswered>
+    <div class="question">
+      {{ question }}
+    </div>
+  </ng-template>
+
+  <ng-template #isAnswered>
+    <div [countUp]="percentage" [options]="options" class="percentage"></div>
+    <div class="votes">{{ votes }} stemmer</div>
+    <div class="question">
+      {{ question }}
+    </div>
+  </ng-template> -->
+
+  <div class="before-click" *ngIf="!isAnswered">
+    <div class="question">
+      {{ question }}
+    </div>
+  </div>
+
+  <div class="after-click" *ngIf="isAnswered">
+    <div [countUp]="percentage" [options]="options" class="percentage"></div>
+    <div class="votes">{{ votes }} stemmer</div>
+    <div class="question">
+      {{ question }}
+    </div>
+  </div>
+</div>
